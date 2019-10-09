@@ -10,8 +10,8 @@ def get_elev(x, units='Meters'):
     :Example:
         >>> get_elev([-111.21,41.4])
         1951.99
-    """
-
+    """ 
+    
     values = {
         'x': x[0],
         'y': x[1],
@@ -19,7 +19,7 @@ def get_elev(x, units='Meters'):
         'output': 'json'
     }
 
-    elev_url = 'http://ned.usgs.gov/epqs/pqs.php?'
+    elev_url = 'https://nationalmap.gov/epqs/pqs.php?'
 
     attempts = 0
     while attempts < 4:
@@ -32,7 +32,6 @@ def get_elev(x, units='Meters'):
              attempts += 1
              g = 0
     return g
-
 def get_huc(x):
     """Receive the content of ``url``, parse it as JSON and return the object.
     :param x: [longitude, latitude]
