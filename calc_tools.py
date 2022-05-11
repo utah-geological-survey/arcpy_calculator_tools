@@ -88,3 +88,9 @@ def dms(dec):
         DD = str(int(DD) + 1)
         MM = '00'
     return DD + MM + SS
+
+def latun(y):
+    """Calculates Lat and Long from USGS Site ID. Assumes ID is string."""
+    latitude = int(y[:2])+int(y[2:4])/60+int(y[4:6])/3600
+    longitude = (int(y[6:9])+int(y[9:11])/60+int(y[11:13])/3600)*-1
+    return latitude, longitude
